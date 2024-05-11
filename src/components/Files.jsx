@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { Button, Grid } from '@mui/material';
+import SearchInput from './SearchInput';
+
 
 const files = [
   { id: 1, filename: 'report.pdf', size: '10 MB', dateUploaded: '2024-05-07' },
@@ -44,21 +46,26 @@ const handleDelete = (id) => {
 
 export default function Files() {
   return (
-    <div style={{display: 'flex', justifyContent: 'center'}}>
-      <div style={{height: 400, width: '60%', alignItems: 'center' }}>
-        <Grid container justifyContent="center" alignItems="center" style={{ height: '100%' }}>
-          <Grid item xs={10}> {/* Adjust xs value for desired table width */}
-            <DataGrid
-              rows={files}
-              columns={columns}
-              pageSize={5}
-              rowsPerPageOptions={[5, 10, 20]}
-              alignItems="center"
-              checkboxSelection
-            />
-          </Grid>
-        </Grid>
+    <>
+      <div>
+        <SearchInput />
       </div>
-    </div>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ height: 400, width: '60%', alignItems: 'center' }}>
+          <Grid container justifyContent="center" alignItems="center" style={{ height: '100%' }}>
+            <Grid item xs={10}> {/* Adjust xs value for desired table width */}
+              <DataGrid
+                rows={files}
+                columns={columns}
+                pageSize={5}
+                rowsPerPageOptions={[5, 10, 20]}
+                alignItems="center"
+                checkboxSelection
+              />
+            </Grid>
+          </Grid>
+        </div>
+      </div>
+    </>
   );
 }

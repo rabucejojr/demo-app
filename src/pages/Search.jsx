@@ -1,8 +1,9 @@
 import React from 'react'
+import { Files } from '../components'
 
 function Search() {
   return (
-    <div>Search</div>
+    <Files/>
   )
 }
 

@@ -8,8 +8,8 @@ import { Files } from '../components';
 const Homepage = () => {
    return (
       <>
-      <Files/>
-         {/* <Container maxWidth="lg" >
+         {/* <Files/> */}
+         <Container maxWidth="lg" >
             <Grid container spacing={2}>
                <Grid item xs={12}>
                   <Typography variant="h3" gutterBottom>
@@ -65,7 +65,7 @@ const Homepage = () => {
                   </Link>
                </Grid>
             </Grid>
-         </Container > */}
+         </Container >
       </>
    );
 };
